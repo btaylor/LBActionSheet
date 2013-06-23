@@ -34,9 +34,9 @@
 @property (nonatomic, readonly) UILabel* titleLabel;
 
 @property (nonatomic, strong) UIImageView* dimView;
-@property (nonatomic, strong) UIImage* backgroundImage;
-@property (nonatomic) UIEdgeInsets controlOffsets;
-@property (nonatomic) UIEdgeInsets contentInsets;
+@property (nonatomic, strong) UIImage* backgroundImage UI_APPEARANCE_SELECTOR;
+@property (nonatomic) UIEdgeInsets controlOffsets UI_APPEARANCE_SELECTOR;
+@property (nonatomic) UIEdgeInsets contentInsets UI_APPEARANCE_SELECTOR;
 
 -(id)initWithTitle:(NSString *)title delegate:(id <LBActionSheetDelegate>)delegate cancelButtonTitle:(NSString *)cancelButtonTitle destructiveButtonTitle:(NSString *)destructiveButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
 
@@ -50,22 +50,22 @@
 -(NSString *)buttonTitleAtIndex:(NSUInteger)buttonIndex;
 -(UIButton *)buttonAtIndex:(NSUInteger)buttonIndex;
 
--(void)setButtonTitleAttributes:(NSDictionary*)attributes forState:(UIControlState)state;
+-(void)setButtonTitleAttributes:(NSDictionary*)attributes forState:(UIControlState)state UI_APPEARANCE_SELECTOR;
 -(NSDictionary*)buttonTitleAttributesForState:(UIControlState)state;
 
--(void)setDefaultButtonBackgroundImage:(UIImage*)image forState:(UIControlState)state;
+-(void)setDefaultButtonBackgroundImage:(UIImage*)image forState:(UIControlState)state UI_APPEARANCE_SELECTOR;
 -(UIImage*)defaultButtonBackgroundImageForState:(UIControlState)state;
--(void)setDefaultButtonTitleAttributes:(NSDictionary*)attributes forState:(UIControlState)state;
+-(void)setDefaultButtonTitleAttributes:(NSDictionary*)attributes forState:(UIControlState)state UI_APPEARANCE_SELECTOR;
 -(NSDictionary*)defaultButtonTitleAttributesForState:(UIControlState)state;
 
--(void)setCancelButtonBackgroundImage:(UIImage*)image forState:(UIControlState)state;
+-(void)setCancelButtonBackgroundImage:(UIImage*)image forState:(UIControlState)state UI_APPEARANCE_SELECTOR;
 -(UIImage*)cancelButtonBackgroundImageForState:(UIControlState)state;
--(void)setCancelButtonTitleAttributes:(NSDictionary*)attributes forState:(UIControlState)state;
+-(void)setCancelButtonTitleAttributes:(NSDictionary*)attributes forState:(UIControlState)state UI_APPEARANCE_SELECTOR;
 -(NSDictionary*)cancelButtonTitleAttributesForState:(UIControlState)state;
 
--(void)setDestructiveButtonBackgroundImage:(UIImage*)image forState:(UIControlState)state;
+-(void)setDestructiveButtonBackgroundImage:(UIImage*)image forState:(UIControlState)state UI_APPEARANCE_SELECTOR;
 -(UIImage*)destructiveButtonBackgroundImageForState:(UIControlState)state;
--(void)setDestructiveButtonTitleAttributes:(NSDictionary*)attributes forState:(UIControlState)state;
+-(void)setDestructiveButtonTitleAttributes:(NSDictionary*)attributes forState:(UIControlState)state UI_APPEARANCE_SELECTOR;
 -(NSDictionary*)destructiveButtonTitleAttributesForState:(UIControlState)state;
 
 -(void)showFromToolbar:(UIToolbar *)view;
